@@ -14,7 +14,10 @@ To run client app:
 - npm run dev
 
 # Features
-- List, update topic and delete interactions with gql api
-- Update and delete works optimistically
-- You can update or delete only active interaction (you need to have accordion open to mark interaction active)
-- E2E tests could be added with Cypress
+- List, update topic and delete interactions with gql api.
+- Update and delete works optimistically.
+- You can update or delete only active interaction (you need to have accordion open to mark interaction active).
+
+# Future consideration
+- E2E tests could be added with Cypress, unit and integration tests with jest and react-testing-library.
+- For longer list of items we could implement cursor based pagination. To make sure long list is still performant we could utilize virtualization.

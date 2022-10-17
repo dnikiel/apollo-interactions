@@ -8,12 +8,16 @@ import styles from "./App.module.css";
 
 import type { Interaction } from "../types";
 
+type InteractionsData = {
+  interactions: [Interaction];
+};
+
 // TODO: Add unit and integration tests with
 // jest and react-testing-library for all components.
 
 // Render application container
 const App = () => {
-  const { loading, error, data } = useQuery(GET_INTERACTIONS);
+  const { loading, error, data } = useQuery<InteractionsData>(GET_INTERACTIONS);
 
   return (
     <Container maxWidth="lg">

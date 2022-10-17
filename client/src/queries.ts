@@ -5,10 +5,19 @@ const GET_INTERACTIONS = gql`
     interactions {
       id
       topic
+    }
+  }
+`;
+
+const GET_INTERACTION = gql`
+  query GetInteraction($id: ID!) {
+    interaction(id: $id) {
+      id
+      topic
       start_time
       user_id
     }
   }
 `;
 
-export { GET_INTERACTIONS };
+export { GET_INTERACTIONS, GET_INTERACTION };

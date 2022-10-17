@@ -20,6 +20,7 @@ const typeDefs = gql`
 
   type Query {
     interactions: [Interaction]
+    interaction(id: ID!): Interaction
   }
 
   type Mutation {
@@ -61,6 +62,8 @@ const interactions = [
 const resolvers = {
   Query: {
     interactions: () => interactions, // TODO: It may need pagination
+    interaction: (_parent, args) =>
+      interactions.find((interaction) => args.id === interaction.id),
   },
   Mutation: {
     updateInteractionTopic: (_parent, args) => ({ ...args }), // TODO: should return complete Interaction type
